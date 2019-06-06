@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:background="@mipmap/icon_wdbj" />
+
+            <LinearLayout
+                android:id="@+id/ly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/px150"
+                android:background="@mipmap/y6"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.d1540173108.hrz.weight.CircleImageView
+                    android:id="@+id/iv_head"
+                    android:layout_width="@dimen/px128"
+                    android:layout_height="@dimen/px128"
+                    android:src="@mipmap/place_holder_user" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tv_name"
+                    style="@style/Tv13black"
+                    android:textStyle="bold"
+                    android:text="小神奇"
+                    android:gravity="right"
+                    android:drawablePadding="@dimen/px20" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tv_time"
+                    style="@style/Tv10black"
+                    android:drawablePadding="@dimen/px20"
+                    android:drawableRight="@mipmap/y4" />
+
+            </LinearLayout>
+
+            <com.d1540173108.hrz.weight.WithScrollGridView
+                android:id="@+id/gridView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/px50"
+                android:numColumns="3"
+                app:layout_constraintTop_toBottomOf="@+id/ly" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+</layout>

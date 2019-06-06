@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top"/>
+
+        <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="match_parent"
+            android:padding="@dimen/px30">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_phone"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/px80"
+                android:textStyle="bold"
+                android:text="@string/login_phone"
+                style="@style/Tv15black" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/et_phone"
+                android:layout_marginTop="@dimen/px20"
+                android:hint="@string/login_you_phone"
+                style="@style/Tv15black"
+                android:layout_width="match_parent"
+                android:background="@null"
+                android:inputType="number"
+                android:maxLength="11"
+                app:layout_constraintTop_toBottomOf="@+id/tv_phone"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_marginTop="@dimen/px20"
+                app:layout_constraintTop_toBottomOf="@id/et_phone"
+                style="@style/divider_1"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_code"
+                android:layout_marginTop="@dimen/px50"
+                app:layout_constraintTop_toBottomOf="@+id/view"
+                android:textStyle="bold"
+                android:text="@string/login_code"
+                style="@style/Tv15black" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/et_code"
+                android:layout_marginTop="@dimen/px20"
+                android:hint="@string/login_you_code"
+                style="@style/Tv15black"
+                android:background="@null"
+                android:inputType="number"
+                android:maxLength="6"
+                app:layout_constraintTop_toBottomOf="@+id/tv_code"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_marginTop="@dimen/px20"
+                app:layout_constraintTop_toBottomOf="@+id/et_code"
+                style="@style/divider_1"/>
+
+            <com.flyco.roundview.RoundTextView
+                android:id="@+id/bt_code"
+                android:layout_marginTop="@dimen/px20"
+                app:layout_constraintTop_toBottomOf="@id/view"
+                app:layout_constraintBottom_toBottomOf="@+id/view1"
+                app:layout_constraintRight_toRightOf="parent"
+                style="@style/Tv15black"
+                android:minEms="4"
+                android:gravity="center"
+                android:padding="@dimen/px10"
+                android:text="@string/login_get"
+                android:textColor="@color/white"
+                app:rv_backgroundColor="@color/red_FF7363" />
+
+            <com.flyco.roundview.RoundTextView
+                android:id="@+id/bt_submit"
+                style="@style/RoundTextView"
+                android:layout_marginTop="@dimen/px80"
+                android:text="@string/login_login_register"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/view1"
+                app:rv_backgroundColor="@color/red_FF7363"
+                app:rv_backgroundPressColor="@color/red_FF4530"
+                app:rv_cornerRadius="@dimen/px10" />
+
+            <LinearLayout
+                android:id="@+id/ly_"
+                android:layout_marginTop="@dimen/px30"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bt_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    style="@style/Tv12black"
+                    android:text="@string/login_code2"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    style="@style/Tv12black"
+                    android:textColor="@color/red_FF4530"
+                    android:text="@string/login_feedback"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly__"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/px30"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ly_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    style="@style/divider_1"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    style="@style/Tv12black"
+                    android:layout_marginLeft="@dimen/px30"
+                    android:layout_marginRight="@dimen/px30"
+                    android:text="@string/huo"/>
+
+                <View
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    style="@style/divider_1"/>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_wx"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/tv_wb"
+                app:layout_constraintTop_toBottomOf="@+id/ly__"
+                android:layout_marginTop="@dimen/px30"
+                style="@style/Tv15black"
+                android:drawablePadding="@dimen/px30"
+                android:gravity="center"
+                android:drawableTop="@mipmap/wx"
+                android:text="@string/wx"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_wb"
+                app:layout_constraintLeft_toRightOf="@id/tv_wx"
+                app:layout_constraintRight_toLeftOf="@id/tv_qq"
+                app:layout_constraintTop_toBottomOf="@+id/ly__"
+                android:layout_marginTop="@dimen/px30"
+                style="@style/Tv15black"
+                android:drawablePadding="@dimen/px20"
+                android:gravity="center"
+                android:drawableTop="@mipmap/wb"
+                android:text="@string/wb"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_qq"
+                app:layout_constraintLeft_toRightOf="@id/tv_wb"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ly__"
+                android:layout_marginTop="@dimen/px30"
+                style="@style/Tv15black"
+                android:drawablePadding="@dimen/px20"
+                android:gravity="center"
+                android:drawableTop="@mipmap/qq"
+                android:text="@string/qq"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+    </LinearLayout>
+
+
+
+</layout>

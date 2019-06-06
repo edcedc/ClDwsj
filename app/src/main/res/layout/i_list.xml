@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/px30"
+        android:paddingLeft="@dimen/px45"
+        android:paddingRight="@dimen/px45"
+        android:paddingTop="@dimen/px30">
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/px30"
+            android:visibility="gone" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_name"
+            style="@style/Tv15black"
+            android:layout_weight="1"
+            android:text="name" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_content"
+            style="@style/Tv12black" />
+
+        <ImageView
+            android:layout_marginLeft="@dimen/px30"
+            android:id="@+id/iv_back"
+            android:layout_gravity="center"
+            android:background="@mipmap/sz_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/view"
+        style="@style/divider_1"
+        android:layout_marginLeft="@dimen/px25"
+        android:layout_marginRight="@dimen/px25" />
+
+
+</LinearLayout>

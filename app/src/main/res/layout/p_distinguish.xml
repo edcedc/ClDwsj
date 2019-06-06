@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.flyco.roundview.RoundLinearLayout
+            android:orientation="vertical"
+            android:padding="@dimen/px30"
+            android:layout_margin="@dimen/px20"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
+            app:rv_cornerRadius="@dimen/px20"
+            app:rv_backgroundColor="@color/white">
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:background="@mipmap/sorry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textSize="@dimen/size24"
+                    android:layout_marginLeft="@dimen/px20"
+                    android:text="@string/tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <com.flyco.roundview.RoundTextView
+                android:id="@+id/bt_submit"
+                android:text="@string/tips2"
+                android:padding="@dimen/px20"
+                android:textSize="@dimen/size24"
+                android:textColor="@color/white"
+                android:gravity="center"
+                app:rv_cornerRadius="@dimen/px10"
+                android:layout_marginTop="@dimen/px20"
+                app:rv_backgroundColor="#7E53FF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.flyco.roundview.RoundLinearLayout>
+
+        <ImageView
+            android:id="@+id/bt_cancel"
+            android:layout_gravity="right"
+            android:background="@mipmap/y28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+
+</FrameLayout>

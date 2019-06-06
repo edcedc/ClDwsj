@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include layout="@layout/include_share1" />
+
+                <include layout="@layout/include_share2" />
+
+                <include layout="@layout/include_share3" />
+
+                <include layout="@layout/include_share4" />
+
+                <include layout="@layout/include_share5" />
+
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/px20"
+            android:layout_marginRight="@dimen/px20"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_moban1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/px200"
+                android:layout_marginRight="@dimen/px5"
+                android:layout_weight="1"
+                android:background="@mipmap/icon_moban1" />
+
+            <ImageView
+                android:id="@+id/iv_moban2"
+                android:layout_width="0dp"
+
+                android:layout_height="@dimen/px200"
+                android:layout_marginRight="@dimen/px5"
+                android:layout_weight="1"
+                android:background="@mipmap/icon_moban2" />
+
+
+            <ImageView
+                android:id="@+id/iv_moban3"
+                android:layout_width="0dp"
+
+                android:layout_height="@dimen/px200"
+                android:layout_marginRight="@dimen/px5"
+                android:layout_weight="1"
+                android:background="@mipmap/icon_moban3" />
+
+
+            <ImageView
+                android:id="@+id/iv_moban4"
+                android:layout_width="0dp"
+
+                android:layout_height="@dimen/px200"
+                android:layout_marginRight="@dimen/px5"
+                android:layout_weight="1"
+                android:background="@mipmap/icon_moban4" />
+
+
+            <ImageView
+                android:id="@+id/iv_moban5"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/px200"
+                android:layout_weight="1"
+                android:background="@mipmap/icon_moban5" />
+
+
+        </LinearLayout>
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/bt_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/px20"
+            android:layout_marginRight="@dimen/px20"
+            android:layout_marginTop="@dimen/px10"
+            android:gravity="center"
+            android:padding="@dimen/px20"
+            android:text="@string/share"
+            android:textColor="@color/white"
+            app:rv_backgroundColor="@color/blue_6759AE"
+            app:rv_cornerRadius="@dimen/px15" />
+
+
+    </LinearLayout>
+</layout>

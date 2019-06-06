@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ly_share5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/icon_beijing5"
+    android:orientation="vertical"
+    android:padding="@dimen/px20">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/px10"
+        android:background="@mipmap/icon_xiangce3"
+        android:padding="@dimen/px20">
+
+        <ImageView
+            android:id="@+id/iv_img5"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginBottom="@dimen/px20"
+            android:layout_marginRight="@dimen/px20"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/place_holder" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="@dimen/px40"
+            android:background="@mipmap/icon_youchuo" />
+
+
+    </FrameLayout>
+
+    <com.flyco.roundview.RoundTextView
+        style="@style/Tv12gray"
+        android:text="动物识别为"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/px20"
+        android:layout_marginTop="@dimen/px20"
+        android:ems="5"
+        android:gravity="center"
+        android:textColor="@color/white"
+        app:rv_backgroundColor="@color/tab_gray" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_name5"
+        style="@style/Tv15black"
+        android:layout_marginBottom="@dimen/px10"
+        android:layout_marginLeft="@dimen/px20"
+        android:layout_marginTop="@dimen/px10"
+        android:textSize="@dimen/size48" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_content5"
+        style="@style/Tv12gray"
+        android:layout_marginLeft="@dimen/px20" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@mipmap/icon_logo" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <android.support.v7.widget.AppCompatTextView
+            style="@style/Tv12gray"
+            android:layout_gravity="bottom"
+           android:text="@string/shibie_zking" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="@dimen/px20"
+            android:background="@color/white_f4f4f4">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/iv_zking5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/px5"
+                android:scaleType="fitXY"
+                android:src="@mipmap/place_holder" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+

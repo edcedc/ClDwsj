@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.d1540173108.hrz.weight.LoadDataLayout
+        android:id="@+id/swipeLoadDataLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+                android:id="@+id/refreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:descendantFocusability="blocksDescendants"
+                        android:orientation="vertical"
+                        android:padding="@dimen/px30">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/px50"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <com.d1540173108.hrz.weight.CircleImageView
+                                android:id="@+id/iv_achievement"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@mipmap/place_holder_user" />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:text="小神奇"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="@dimen/px20"
+                                android:id="@+id/tv_name"
+                                style="@style/Tv12gray" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/iv_visit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@mipmap/icon_sysys" />
+
+                            <ImageView
+                                android:id="@+id/iv_msg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/px20"
+                                android:background="@mipmap/icon_lanche" />
+
+                        </LinearLayout>
+
+                        <android.support.v7.widget.AppCompatTextView
+                            style="@style/Tv12gray"
+                            android:layout_marginTop="@dimen/px60"
+                            android:text="@string/animal_kingdom"
+                            android:textSize="@dimen/size36"
+                            android:textStyle="bold" />
+
+                        <com.flyco.roundview.RoundLinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:rv_cornerRadius="@dimen/px20">
+
+                            <LinearLayout
+                                android:id="@+id/ly_ar_red"
+                                android:background="@mipmap/qiehuan1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/px40"
+                                android:orientation="horizontal"
+                                app:rv_cornerRadius_TL="@dimen/px20"
+                                app:rv_cornerRadius_TR="@dimen/px20">
+
+                                <android.support.v7.widget.AppCompatTextView
+                                    android:id="@+id/fy_magical_animals"
+                                    android:layout_width="0dp"
+                                    android:padding="@dimen/px20"
+                                    android:layout_weight="1"
+                                    style="@style/Tv15black"
+                                    android:gravity="center"
+                                    android:text="@string/magical_animals2" />
+
+                                <android.support.v7.widget.AppCompatTextView
+                                    android:id="@+id/fy_red_envelopes"
+                                    android:layout_width="0dp"
+                                    android:padding="@dimen/px20"
+                                    android:gravity="center"
+                                    android:layout_weight="1"
+                                    style="@style/Tv15black"
+                                    android:textColor="@color/white"
+                                    android:text="@string/red_envelopes"  />
+
+                            </LinearLayout>
+
+                            <com.d1540173108.hrz.weight.RoundImageView
+                                android:id="@+id/iv_ar_img"
+                                android:layout_width="match_parent"
+                                android:layout_height="165dp"
+                                android:scaleType="fitXY"
+                                android:background="@mipmap/shenqidongwu" />
+
+                        </com.flyco.roundview.RoundLinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/px60"
+                            android:gravity="left|center"
+                            android:orientation="horizontal">
+
+                            <android.support.v7.widget.AppCompatTextView
+                                style="@style/Tv12gray"
+                                android:text="@string/sleep"
+                                android:textSize="@dimen/size36"
+                                android:textStyle="bold" />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                style="@style/Tv12gray"
+                                android:layout_marginLeft="@dimen/px20"
+                                android:text="@string/sleep2" />
+
+                        </LinearLayout>
+
+                        <com.d1540173108.hrz.weight.WithScrollGridView
+                            android:id="@+id/gridView"
+                            android:scrollbars="none"
+                            android:layout_marginTop="@dimen/px50"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:numColumns="4" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/px60"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <android.support.v7.widget.AppCompatTextView
+                                style="@style/Tv12gray"
+                                android:text="@string/story"
+                                android:textSize="@dimen/size36"
+                                android:layout_weight="1"
+                                android:textStyle="bold" />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/tv_more"
+                                style="@style/Tv12gray"
+                                android:text="查看更多"
+                                android:drawablePadding="@dimen/px10"
+                                android:drawableRight="@mipmap/y4"  />
+
+
+                        </LinearLayout>
+
+                        <com.d1540173108.hrz.weight.OrientationAwareRecyclerView
+                            android:id="@+id/recyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/px40" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            style="@style/Tv12gray"
+                            android:layout_marginTop="@dimen/px60"
+                            android:text="小知识"
+                            android:textSize="@dimen/size36"
+                            android:textStyle="bold" />
+
+                        <com.d1540173108.hrz.weight.RoundImageView
+                            android:id="@+id/iv_img"
+                            android:layout_marginBottom="@dimen/px100"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/px320"
+                            android:layout_marginTop="@dimen/px40"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/y48" />
+
+                    </LinearLayout>
+
+
+                </android.support.v4.widget.NestedScrollView>
+
+            </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+
+            <ImageView
+                android:id="@+id/iv_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_marginBottom="@dimen/px200"
+                android:layout_marginRight="@dimen/px30"
+                android:background="@mipmap/icon_lingquhongbao" />
+
+            <LinearLayout
+                android:id="@+id/ly_play"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@color/white_f4f4f4"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/px30">
+
+                <ImageView
+                    android:scaleType="fitXY"
+                    android:id="@+id/iv_play_img"
+                    android:layout_width="@dimen/px70"
+                    android:layout_height="@dimen/px70"
+                    android:src="@mipmap/place_holder" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tv_play_name"
+                    style="@style/Tv12gray"
+                    android:layout_marginLeft="@dimen/px30" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/iv_play"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@mipmap/icon_bofang" />
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/iv_play_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/px30"
+                    android:background="@mipmap/icon_bofangliebiao" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </com.d1540173108.hrz.weight.LoadDataLayout>
+
+</layout>

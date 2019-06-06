@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top" />
+
+        <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white_f4f4f4">
+
+            <com.flyco.roundview.RoundLinearLayout
+                android:id="@+id/ly_layout"
+                android:visibility="gone"
+                android:layout_margin="@dimen/px40"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/px40"
+                android:gravity="center"
+                app:rv_backgroundColor="@color/white"
+                app:rv_cornerRadius="@dimen/px20">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:gravity="center"
+                    android:drawablePadding="@dimen/px30"
+                    android:layout_marginTop="@dimen/px50"
+                    android:text="@string/submit_successfully"
+                    android:drawableLeft="@mipmap/icon_tjcg"
+                    android:textSize="@dimen/size36"
+                    style="@style/Tv15black"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:text="@string/feedback1"
+                    android:layout_marginTop="@dimen/px50"
+                    android:gravity="center"
+                    style="@style/Tv12black" />
+
+                <com.flyco.roundview.RoundTextView
+                    android:id="@+id/btn_commit"
+                    android:ems="5"
+                    android:layout_width="wrap_content"
+                    style="@style/RoundTextView"
+                    android:padding="@dimen/px10"
+                    android:layout_marginTop="@dimen/px50"
+                    android:text="@string/submit3"
+                    android:textColor="@color/white"
+                    app:rv_backgroundColor="@color/red_FF7363"
+                    app:rv_backgroundPressColor="@color/red_FF4530"
+                    app:rv_cornerRadius="@dimen/px10" />
+
+
+            </com.flyco.roundview.RoundLinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/px40">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="top"
+                    android:minLines="10"
+                    android:hint="@string/feedback2"
+                    android:padding="@dimen/px20"
+                    android:textSize="@dimen/size24" />
+
+                <com.flyco.roundview.RoundTextView
+                    android:id="@+id/bt_submit"
+                    style="@style/RoundTextView"
+                    android:layout_marginTop="@dimen/px40"
+                    android:text="@string/submit"
+                    android:textColor="@color/white"
+                    app:layout_constraintTop_toBottomOf="@id/view1"
+                    app:rv_backgroundColor="@color/red_FF7363"
+                    app:rv_backgroundPressColor="@color/red_FF4530"
+                    app:rv_cornerRadius="@dimen/px10" />
+
+            </LinearLayout>
+
+        </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+    </LinearLayout>
+
+
+</layout>

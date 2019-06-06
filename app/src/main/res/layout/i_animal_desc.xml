@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/px10"
+    android:paddingLeft="@dimen/px20"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+
+       <com.d1540173108.hrz.weight.CircleImageView
+           android:layout_width="@dimen/px20"
+           android:layout_gravity="center"
+           android:layout_height="@dimen/px20"
+           android:src="@color/blue_6759AE" />
+
+       <android.support.v7.widget.AppCompatTextView
+           android:id="@+id/tv_title"
+           android:layout_marginLeft="@dimen/px20"
+           android:textStyle="bold"
+           style="@style/Tv12gray"
+           />
+
+   </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/px10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.d1540173108.hrz.weight.CircleImageView
+            android:layout_width="@dimen/px20"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            android:layout_height="@dimen/px20"
+            android:src="@color/blue_6759AE" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_content"
+            android:layout_marginLeft="@dimen/px20"
+            app:layout_constraintLeft_toRightOf="@+id/tv_title"
+            style="@style/Tv12gray"
+            />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

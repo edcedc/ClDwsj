@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="?android:selectableItemBackground"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="@dimen/px30"
+    android:paddingRight="@dimen/px30"
+    android:paddingTop="@dimen/px30">
+
+    <ImageView
+        android:id="@+id/iv_img"
+        android:background="@mipmap/icon_xxtx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:layout_marginLeft="@dimen/px30"
+        app:layout_constraintLeft_toRightOf="@+id/iv_img"
+        app:layout_constraintBottom_toTopOf="@+id/tv_content"
+        style="@style/Tv15black" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_content"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_marginLeft="@dimen/px30"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintLeft_toRightOf="@+id/iv_img"
+        style="@style/Tv12gray" />
+
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_time"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+        app:layout_constraintTop_toTopOf="@+id/tv_title"
+        android:textSize="@dimen/size18"
+        style="@style/Tv12gray" />
+    
+    <View
+        android:layout_marginTop="@dimen/px30"
+        app:layout_constraintTop_toBottomOf="@+id/iv_img"
+        style="@style/divider_1"/>
+    
+</android.support.constraint.ConstraintLayout>

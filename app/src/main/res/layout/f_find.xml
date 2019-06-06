@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <com.d1540173108.hrz.weight.WithScrollGridView
+        android:id="@+id/gridView"
+        android:numColumns="3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:background="@drawable/actionbar_shadow_up"
+        android:layout_height="2dp" />
+
+    <com.d1540173108.hrz.weight.buttonBar.BottomBar
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px105"
+        android:layout_gravity="bottom" />
+</LinearLayout>

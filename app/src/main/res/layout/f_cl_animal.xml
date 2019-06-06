@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:background="@mipmap/icon_sybeijing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:layout_marginTop="@dimen/px30"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/finish"
+            android:padding="10dp"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:background="@mipmap/a01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+       <LinearLayout
+           android:layout_marginLeft="@dimen/px30"
+           android:layout_marginRight="@dimen/px30"
+           app:layout_constraintLeft_toLeftOf="parent"
+           app:layout_constraintRight_toRightOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent"
+           android:layout_marginBottom="@dimen/px50"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+
+           <ImageView
+               android:id="@+id/iv_gallery"
+               android:background="@mipmap/icon_tukubtn"
+               android:layout_width="0dp"
+               android:layout_weight="1"
+               android:layout_height="wrap_content" />
+
+           <ImageView
+               android:layout_marginLeft="@dimen/px30"
+               android:id="@+id/iv_animal_encyclopedia"
+               android:background="@mipmap/icon_dwbkbtn"
+               android:layout_width="0dp"
+               android:layout_weight="1"
+               android:layout_height="wrap_content" />
+
+       </LinearLayout>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/iv_set"
+            android:layout_marginBottom="@dimen/px320"
+            android:layout_marginRight="@dimen/px30"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@mipmap/icon_shezhi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+       <LinearLayout
+           android:id="@+id/ly_distinguish"
+           android:layout_marginBottom="@dimen/px240"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintLeft_toLeftOf="parent"
+           app:layout_constraintRight_toRightOf="parent"
+           android:gravity="center"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+
+           <FrameLayout
+               android:layout_width="@dimen/px180"
+               android:layout_height="@dimen/px180">
+
+               <com.d1540173108.hrz.weight.CircleImageView
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:src="@color/white"/>
+
+               <ImageView
+                   android:layout_gravity="center"
+                   android:background="@mipmap/icon_shibie"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" />
+
+           </FrameLayout>
+
+           <android.support.v7.widget.AppCompatTextView
+               android:text="@string/distinguish"
+               android:layout_marginTop="@dimen/px10"
+               android:layout_width="wrap_content"
+               android:textColor="@color/blue_7857FF"
+               android:layout_height="wrap_content" />
+
+       </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+</layout>

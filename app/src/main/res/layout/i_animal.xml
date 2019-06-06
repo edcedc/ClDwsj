@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.d1540173108.hrz.weight.RoundImageView
+        android:id="@+id/iv_img"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/place_holder"
+        android:layout_width="@dimen/px188"
+        android:layout_height="@dimen/px188" />
+    
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_name"
+        android:layout_marginTop="@dimen/px20"
+        style="@style/Tv15black" />
+
+</LinearLayout>

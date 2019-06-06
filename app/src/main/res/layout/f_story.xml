@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top" />
+
+        <com.d1540173108.hrz.weight.LoadDataLayout
+            android:id="@+id/swipeLoadDataLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@mipmap/bg_1" />
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#83D4E9" />
+
+                    </LinearLayout>
+                    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+                        android:id="@+id/refreshLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/px20"
+                        android:layout_marginLeft="@dimen/px20"
+                        android:layout_marginRight="@dimen/px20"
+                        android:nestedScrollingEnabled="false"
+                        android:overScrollMode="never" />
+
+                    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+                </FrameLayout>
+
+
+
+        </com.d1540173108.hrz.weight.LoadDataLayout>
+
+    </LinearLayout>
+
+</layout>

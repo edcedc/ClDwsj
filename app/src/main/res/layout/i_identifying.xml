@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.flyco.roundview.RoundFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="?android:selectableItemBackground"
+    android:layout_height="wrap_content"
+    app:rv_cornerRadius="@dimen/px20"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.flyco.roundview.RoundLinearLayout
+        android:layout_marginRight="@dimen/px30"
+        android:layout_marginLeft="@dimen/px30"
+        android:layout_marginTop="@dimen/px30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:rv_cornerRadius="@dimen/px20"
+        app:rv_backgroundColor="@color/white">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.d1540173108.hrz.weight.RoundImageView
+                android:src="@mipmap/place_holder"
+                android:scaleType="fitXY"
+                android:id="@+id/iv_img"
+                android:layout_width="@dimen/px192"
+                android:layout_height="@dimen/px192" />
+            
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_name"
+                app:layout_constraintLeft_toRightOf="@id/iv_img"
+                android:layout_marginLeft="@dimen/px30"
+                app:layout_constraintTop_toTopOf="@+id/iv_img"
+                app:layout_constraintBottom_toTopOf="@+id/tv_content"
+                style="@style/Tv15black"
+                android:textSize="@dimen/size36"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:textStyle="italic"
+                android:id="@+id/tv_content"
+                android:layout_marginLeft="@dimen/px30"
+                android:textSize="34sp"
+                app:layout_constraintLeft_toRightOf="@+id/iv_img"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_img"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red_F58C64"
+                android:gravity="center" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_marginBottom="@dimen/px20"
+                android:layout_marginLeft="@dimen/px30"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_content"
+                app:layout_constraintLeft_toRightOf="@+id/tv_content"
+                android:text="@string/matching_degree"
+                    style="@style/Tv15black"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+
+        
+
+    </com.flyco.roundview.RoundLinearLayout>
+
+</com.flyco.roundview.RoundFrameLayout>

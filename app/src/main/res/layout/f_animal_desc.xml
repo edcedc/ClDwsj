@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top" />
+
+        <com.d1540173108.hrz.weight.LoadDataLayout
+            android:id="@+id/swipeLoadDataLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+                android:id="@+id/refreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.youth.banner.Banner xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/banner"
+                                android:layout_width="match_parent"
+                                android:layout_height="211dp" />
+
+                            <ImageView
+                                android:id="@+id/iv_play"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@mipmap/y17"
+                                android:visibility="gone" />
+
+                            <com.flyco.roundview.RoundTextView
+                                android:id="@+id/tv_banner_size"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right"
+                                android:layout_margin="@dimen/px30"
+                                android:gravity="center"
+                                android:minEms="3"
+                                android:padding="@dimen/px5"
+                                android:text="0/0"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/size20"
+                                app:rv_backgroundColor="@color/blue_6759AE"
+                                app:rv_cornerRadius="@dimen/px5" />
+
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="@dimen/px30">
+
+                            <com.flyco.roundview.RoundLinearLayout
+                                android:id="@+id/ly_music"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center|left"
+                                android:orientation="vertical"
+                                android:padding="@dimen/px20"
+                                android:visibility="gone"
+                                app:rv_backgroundColor="@color/white"
+                                app:rv_cornerRadius="@dimen/px10">
+
+                                <android.support.v7.widget.AppCompatTextView
+                                    style="@style/Tv12gray"
+                                    android:layout_marginBottom="@dimen/px10"
+                                    android:text="@string/animal_voice"
+                                    android:textColor="@color/blue_63678D"
+                                    android:textSize="@dimen/size26"
+                                    android:visibility="gone" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <android.support.v7.widget.AppCompatTextView
+                                        android:id="@+id/tv_start_time"
+                                        style="@style/Tv12gray"
+                                        android:text="00:00"
+                                        android:textColor="@color/blue_63678D" />
+
+                                    <SeekBar
+                                        android:id="@+id/music_seekbar"
+                                        style="@style/CustomSeekbarStyle"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1" />
+
+                                    <android.support.v7.widget.AppCompatTextView
+                                        android:id="@+id/tv_end_time"
+                                        style="@style/Tv12gray"
+                                        android:textColor="@color/blue_63678D" />
+
+                                    <ImageView
+                                        android:id="@+id/iv_play_img"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/px20"
+                                        android:layout_marginRight="@dimen/px20"
+                                        android:background="@mipmap/y44" />
+
+                                </LinearLayout>
+
+                            </com.flyco.roundview.RoundLinearLayout>
+
+                            <com.flyco.roundview.RoundLinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/px30"
+                                android:gravity="center|left"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/px20"
+                                app:rv_backgroundColor="@color/white"
+                                app:rv_cornerRadius="@dimen/px10">
+
+                                <com.d1540173108.hrz.weight.CircleImageView
+                                    android:layout_width="@dimen/px20"
+                                    android:layout_height="@dimen/px20"
+                                    android:src="@color/blue_6759AE" />
+
+                                <android.support.v7.widget.AppCompatTextView
+                                    android:id="@+id/tv_name"
+                                    style="@style/Tv12black"
+                                    android:layout_marginLeft="@dimen/px20"
+                                    android:textSize="@dimen/size36" />
+
+                                <android.support.v7.widget.AppCompatTextView
+                                    android:id="@+id/tv_nick"
+                                    style="@style/Tv15gray"
+                                    android:layout_marginLeft="@dimen/px20" />
+
+                            </com.flyco.roundview.RoundLinearLayout>
+
+                            <com.flyco.roundview.RoundLinearLayout
+                                android:id="@+id/ly_wonderful_story"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/px30"
+                                android:orientation="vertical"
+                                android:padding="@dimen/px20"
+                                app:rv_backgroundColor="@color/white"
+                                app:rv_cornerRadius="@dimen/px10">
+
+                                <android.support.v7.widget.AppCompatTextView
+                                    android:id="@+id/tv_wonderful"
+                                    style="@style/Tv15black"
+                                    android:drawableLeft="@mipmap/y18"
+                                    android:drawablePadding="@dimen/px20"
+                                    android:text="@string/wonderful_story" />
+
+                                <android.support.v7.widget.AppCompatTextView
+                                    android:id="@+id/tv_wonderful_story"
+                                    style="@style/Tv12gray"
+                                    android:layout_marginLeft="@dimen/px35"
+                                    android:layout_marginTop="@dimen/px10" />
+
+                                <FrameLayout
+                                    android:padding="@dimen/px20"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/px20"
+                                    android:id="@+id/iv_wonderful_story"
+                                    android:layout_width="wrap_content"
+                                    android:visibility="gone"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:background="@mipmap/y13"/>
+
+                                </FrameLayout>
+
+
+
+                            </com.flyco.roundview.RoundLinearLayout>
+
+                            <com.flyco.roundview.RoundLinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/px30"
+                                android:orientation="vertical"
+                                android:padding="@dimen/px20"
+                                app:rv_backgroundColor="@color/white"
+                                app:rv_cornerRadius="@dimen/px10">
+
+                                <com.flyco.roundview.RoundLinearLayout
+                                    android:id="@+id/ly_encyclopedic_knowledge"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <android.support.v7.widget.AppCompatTextView
+                                        style="@style/Tv15black"
+                                        android:drawableLeft="@mipmap/y18"
+                                        android:drawablePadding="@dimen/px20"
+                                        android:text="@string/encyclopedic_knowledge" />
+
+                                    <com.d1540173108.hrz.weight.WithScrollListView
+                                        android:id="@+id/listView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/px35"
+                                        android:layout_marginTop="@dimen/px10"
+                                        android:divider="@null" />
+
+                                </com.flyco.roundview.RoundLinearLayout>
+
+
+                                <FrameLayout
+                                    android:padding="@dimen/px20"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/px20"
+                                    android:id="@+id/iv_encyclopedic_knowledge"
+                                    android:layout_width="wrap_content"
+                                    android:visibility="visible"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:background="@mipmap/y13"/>
+
+                                </FrameLayout>
+
+
+
+                            </com.flyco.roundview.RoundLinearLayout>
+
+                            <ImageView
+                                android:id="@+id/iv_more"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/px76"
+                                android:layout_marginTop="@dimen/px30"
+                                android:background="@mipmap/y15" />
+
+                            <ImageView
+                                android:id="@+id/iv_just"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/px30" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v4.widget.NestedScrollView>
+
+            </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+        </com.d1540173108.hrz.weight.LoadDataLayout>
+
+    </LinearLayout>
+
+</layout>

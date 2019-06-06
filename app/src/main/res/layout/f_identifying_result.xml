@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_img"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_gravity="top"
+                android:layout_marginTop="@dimen/px50"
+                android:theme="@style/AppTheme.AppBarLight"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@mipmap/icon_fh"
+                app:popupTheme="@style/AppTheme.Popup"
+                app:subtitleTextColor="@color/black_484848"
+                app:titleTextColor="@color/black_484848">
+
+                <TextView
+                    android:id="@+id/top_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/recognition_result"
+                    android:textColor="@color/white"
+                    android:textSize="19sp" />
+
+            </android.support.v7.widget.Toolbar>
+
+            <com.flyco.roundview.RoundFrameLayout
+                android:id="@+id/fy_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                app:rv_backgroundColor="@color/white"
+                app:rv_cornerRadius="@dimen/px20">
+
+                <com.d1540173108.hrz.weight.RoundImageView
+                    android:id="@+id/iv_head"
+                    android:layout_width="303dp"
+                    android:layout_height="303dp"
+                    android:layout_margin="@dimen/px30"
+                    android:src="@mipmap/place_holder" />
+
+            </com.flyco.roundview.RoundFrameLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/px50"
+                app:layout_constraintTop_toBottomOf="@+id/fy_img">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tv_less_than"
+                    style="@style/Tv15black"
+                    android:layout_marginRight="@dimen/px20"
+                    android:text="@string/less_than"
+                    android:textSize="@dimen/size36"
+                    android:visibility="gone" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:textStyle="italic"
+                    android:id="@+id/tv_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/red_F58C64"
+                    android:textSize="36sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    style="@style/Tv15black"
+                    android:layout_weight="1"
+                    android:text="@string/matching_degree"
+                    android:textSize="@dimen/size36" />
+
+                <com.flyco.roundview.RoundTextView
+                    android:id="@+id/tv_more"
+                    style="@style/Tv15black"
+                    android:ems="5"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/px10"
+                    android:paddingTop="@dimen/px10"
+                    android:text="@string/more"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size28"
+                    app:rv_backgroundColor="@color/blue_7857FF"
+                    app:rv_cornerRadius_BL="@dimen/px30"
+                    app:rv_cornerRadius_TL="@dimen/px30" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@color/white"
+                android:id="@+id/ly_animals"
+                android:padding="@dimen/px20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/px50"
+                android:layout_marginRight="@dimen/px50"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/ly_more">
+
+                <com.d1540173108.hrz.weight.RoundImageView
+                    android:id="@+id/iv_img2"
+                    android:layout_width="@dimen/px188"
+                    android:layout_height="@dimen/px188"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/place_holder" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/px30"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/tv_name"
+                            style="@style/Tv15black"
+                            android:textSize="@dimen/size36" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/tv_nick"
+                            style="@style/Tv12gray"
+                            android:visibility="invisible"
+                            android:layout_marginLeft="@dimen/px20"
+                            android:layout_weight="1"
+                            android:textSize="@dimen/size36" />
+
+                        <ImageView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@mipmap/sz_more" />
+
+                    </LinearLayout>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tv_desc"
+                        style="@style/Tv12gray"
+                        android:maxLines="4"
+                        android:layout_marginTop="@dimen/px10" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</layout>

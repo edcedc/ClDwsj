@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingRight="@dimen/px30">
+
+    <FrameLayout
+        android:layout_width="150dp"
+        android:layout_height="150dp">
+
+        <com.d1540173108.hrz.weight.RoundImageView
+            android:id="@+id/iv_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/place_holder" />
+
+        <com.flyco.roundview.RoundTextView
+            app:rv_backgroundColor="#55cccccc"
+            android:id="@+id/tv_title"
+            style="@style/Tv15black"
+            android:padding="@dimen/px15"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size32"
+            app:rv_cornerRadius_BR="@dimen/px10"
+            app:rv_cornerRadius_BL="@dimen/px10"
+            android:textStyle="bold"
+            android:layout_gravity="bottom|left"
+            />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/iv_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="@dimen/px30"
+            android:background="@mipmap/icon_qianjin" />
+
+    </FrameLayout>
+
+
+</FrameLayout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.d1540173108.hrz.weight.ZoomImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="352dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/place_holder"
+                    android:visibility="gone" />
+
+                <FrameLayout
+                    android:id="@+id/fy_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp">
+
+                    <com.luck.picture.lib.photoview.PhotoView
+                        android:id="@+id/iv_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        app:src="@mipmap/place_holder" />
+
+                    <FrameLayout
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@mipmap/y34">
+
+                        <View
+                            android:id="@+id/v_caijian"
+                            android:layout_width="1dp"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="@dimen/px100"
+                            android:layout_marginTop="@dimen/px145" />
+
+                        <ImageView
+                            android:id="@+id/iv_caijian"
+                            android:layout_width="wrap_content"
+                            android:layout_height="224dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="2.5dp"
+                            android:background="@mipmap/caijian"
+                            android:visibility="gone" />
+
+                    </FrameLayout>
+
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/iv_play_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/ly_xu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/px20"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fy_img">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/Tv12gray"
+                        android:text="双指移动并缩放动物全身至" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/y35" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/Tv12gray"
+                        android:text="虚线框内" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bt_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/px50"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ly_xu">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:background="@mipmap/y26" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/Tv15black"
+                        android:gravity="center"
+                        android:text="@string/submit3"
+                        android:textColor="@color/blue_6759AE"
+                        android:textSize="@dimen/size36" />
+
+                </LinearLayout>
+
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/bt_cancel"
+                    style="@style/Tv15black"
+                    android:layout_marginRight="@dimen/px100"
+                    android:layout_marginTop="@dimen/px50"
+                    android:drawableTop="@mipmap/y27"
+                    android:gravity="center"
+                    android:text="@string/cancel"
+                    android:textColor="@color/blue_6759AE"
+                    app:layout_constraintBottom_toBottomOf="@+id/bt_submit"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="@+id/bt_submit"
+                    app:layout_constraintTop_toBottomOf="@+id/ly_xu" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintTop_toBottomOf="@+id/bt_cancel" />
+
+            </android.support.constraint.ConstraintLayout>
+
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+
+
+</layout>

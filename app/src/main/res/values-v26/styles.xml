@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="divider_1">
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/white_f4f4f4</item>
+    </style>
+
+    <style name="myTransparent">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
+    <style name="Tv10black" parent="TextStyle">
+        <item name="android:textColor">@color/black_484848</item>
+        <item name="android:textSize">@dimen/size20</item>
+    </style>
+    <style name="Tv15black" parent="TextStyle">
+        <item name="android:textColor">@color/black_484848</item>
+        <item name="android:textSize">@dimen/size30</item>
+    </style>
+    <style name="Tv12black" parent="TextStyle">
+        <item name="android:textColor">@color/black_484848</item>
+        <item name="android:textSize">@dimen/size24</item>
+    </style>
+    <style name="Tv12gray" parent="TextStyle">
+        <item name="android:textColor">@color/tab_gray</item>
+        <item name="android:textSize">@dimen/size24</item>
+    </style>
+    <style name="Tv13black" parent="TextStyle">
+        <item name="android:textColor">@color/black_484848</item>
+        <item name="android:textSize">@dimen/size26</item>
+    </style>
+    <style name="Tv15gray" parent="TextStyle">
+        <item name="android:textColor">@color/tab_gray</item>
+        <item name="android:textSize">@dimen/size30</item>
+    </style>
+
+    <style name="RoundTextView">
+        <item name="android:text">xxxx</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/size30</item>
+        <item name="android:padding">@dimen/px20</item>
+        <item name="android:gravity">center</item>
+        <!--<item name="android:layout_marginLeft">@dimen/px30</item>-->
+        <!--<item name="android:layout_marginRight">@dimen/px30</item>-->
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="TextStyle">
+        <!--<item name="android:background">@null</item>-->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!--<item name="android:autoSizeTextType">uniform</item>    &lt;!&ndash;即可自适应  宽度 < 8 > 18&ndash;&gt;-->
+        <item name="android:autoSizeMinTextSize">10dp</item>
+        <item name="android:autoSizeMaxTextSize">20dp</item>
+
+
+        <!--<item name="android:gravity">center</item>-->
+        <!--<item name="android:maxLines">3</item>-->
+        <!--<item name="android:ellipsize">end</item>-->
+    </style>
+</resources>

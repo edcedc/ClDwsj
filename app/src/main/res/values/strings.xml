@@ -1,0 +1,109 @@
+<resources>
+    <string name="app_name">神奇动物世界</string>
+    <string name="setting">设置</string>
+    <string name="resume">Resume</string>
+    <string name="cancel">取消</string>
+    <string name="title_dialog">Tips</string>
+    <string name="not_wx_pay">您未安装最新版本微信，不支持微信支付，请安装或升级微信版本</string>
+    <string name="message_permission_rationale">授予下列权限以继续程序:\n\n%1$s</string>
+    <string name="message_overlay_failed">您的电话不允许我们使用其他应用程序.</string>
+    <string name="message_permission_always_failed">我们需要以下权限，请在设置中为我们开启：\n\n%1$s</string>
+
+    <string name="wx">微信</string>
+    <string name="wb">微博</string>
+    <string name="qq">QQ</string>
+
+    <!--提示语-->
+    <string name="error_phone">手机号码格式错误</string>
+    <string name="error_phone1">手机号码或验证码为空</string>
+    <string name="error_">请输入完整</string>
+    <string name="error_nickname">请输入您的昵称</string>
+    <string name="error_pwd_length">密码位于6~16位</string>
+    <string name="please_phone">请输入手机号</string>
+    <string name="please_code">请输入验证码</string>
+    <string name="please_pwd1">请再次输入密码</string>
+    <string name="please_pwd2">两次密码不一致</string>
+    <string name="error_1">请阅读协议</string>
+    <string name="submit">提交</string>
+    <string name="submit2">保存</string>
+    <string name="submit3">确定</string>
+    <string name="edit">编辑</string>
+    <string name="clear">清除</string>
+    <string name="no_data">暂无数据</string>
+    <string name="no_search">搜索不能为空</string>
+    <string name="right_name">请在此输入正确的名字</string>
+    <string name="enter_animal_names">输入动物名字</string>
+    <string name="shibie_zking">长按识别二维码\n查看更多动物故事</string>
+
+    <!--登录-->
+    <string name="login">登录</string>
+    <string name="login_phone">手机号</string>
+    <string name="login_you_phone">请输入你的手机号</string>
+    <string name="login_code">验证码</string>
+    <string name="login_you_code">请输入你的验证码</string>
+    <string name="login_get">获取</string>
+    <string name="login_login_register">登录/注册</string>
+    <string name="login_code2">短信验证码收不到？</string>
+    <string name="login_feedback">点击提交反馈信息</string>
+    <string name="huo">或</string>
+    <string name="feedback">提交反馈</string>
+    <string name="submit_successfully">提交成功</string>
+    <string name="feedback1">您的意见反馈我们已经收到，感谢您\n对神奇动物的支持与关注。</string>
+    <string name="feedback2">请输入您的意见。</string>
+
+    <!--首页-->
+    <string name="animal_kingdom">动物世界</string>
+    <string name="magical_animals2">神奇动物</string>
+    <string name="red_envelopes">科普红包</string>
+    <string name="sleep">每天5分钟</string>
+    <string name="sleep2">和孩子一起共享美好时光</string>
+    <string name="story">故事</string>
+    <string name="little_knowledge">十万个“喂”什么</string>
+    <string name="picture_book">绘本</string>
+    <string name="animation">动画</string>
+    <string name="msg">消息中心</string>
+    <string name="msg_desc">消息详情</string>
+    <string name="animal_voice">来听一听动物的声音</string>
+    <string name="tishiyu">好神奇，拍照就能识别动物！快来长隆体验吧！</string>
+
+    <!--我的-->
+    <string name="stories_collection">我收藏的故事</string>
+    <string name="recently_broadcast">最近播放</string>
+    <string name="my_download">我的下载</string>
+    <string name="magical_animals">关于我们</string>
+    <string name="clear_cache">清除缓存</string>
+    <string name="my_info">我的信息</string>
+    <string name="nick">昵称</string>
+    <string name="set_nick">设置昵称</string>
+    <string name="sex">性别</string>
+    <string name="birthday">生日</string>
+    <string name="describe">长隆野生动物世界隶属全国首批国家级AAAAA旅游景区。长隆旅游度假区，地处广州番禺。被誉为“中国最具国际水准的野生动物园”，是</string>
+
+    <!--发现-->
+    <string name="chang_long">长隆动物</string>
+    <string name="zking">扫一扫</string>
+
+    <!--动物世界-->
+    <string name="animal_encyclopedia">动物百科</string>
+    <string name="animal_search">请输入动物的名字查询想要的动物信息</string>
+    <string name="search">搜索</string>
+    <string name="cl_animal">长隆动物明星</string>
+    <string name="wonderful_story">精彩故事</string>
+    <string name="encyclopedic_knowledge">百科知识</string>
+    <string name="details">详情</string>
+    <string name="error_correction">识别细节</string>
+    <string name="error_correction2">纠错</string>
+    <string name="matching_degree">匹配度</string>
+    <string name="distinguish">开启识别</string>
+    <string name="tips">仅限长隆动物\n咨询附近工作人员</string>
+    <string name="tips2">换个角度试一试 </string>
+    <string name="recognition_result">识别结果 </string>
+    <string name="less_than">小于</string>
+    <string name="more">更多</string>
+    <string name="share">分享</string>
+    <string name="splash_text">精彩即将开启\n敬请期待</string>
+    <string name="share_title">神奇动物世界</string>
+    <string name="share_content">抢红包，听故事，跟国宝合影</string>
+
+
+</resources>

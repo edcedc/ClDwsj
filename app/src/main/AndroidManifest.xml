@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.d1540173108.hrz"
-    >
-    tag：xmlns:tools="http://schemas.Android.com/tools"
+    package="com.d1540173108.hrz">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,7 +10,8 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.MEDIA_MOUNTED" />
     <!-- 腾讯x5内核 -->
@@ -22,18 +21,29 @@
 
 
     <uses-permission android:name="android.permission.FLASHLIGHT" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- iBeancon功能所需权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <!-- 个推3.0电子围栏功能所需权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 浮动通知权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
         android:name="com.d1540173108.hrz.mar.MyApplication"
         android:allowBackup="false"
         android:debuggable="false"
         android:hardwareAccelerated="true"
-        android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/logo"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
@@ -42,9 +52,9 @@
         <activity
             android:name="com.d1540173108.hrz.view.act.SplashAct"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/AppTheme.customeTheme"
-            android:screenOrientation="portrait"
             android:resizeableActivity="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.customeTheme"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -55,43 +65,43 @@
 
         <activity
             android:name="com.d1540173108.hrz.MainActivity"
-            android:resizeableActivity="true"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
+            android:resizeableActivity="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.d1540173108.hrz.view.act.LoginAct"
             android:resizeableActivity="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
 
         <activity
             android:name="com.d1540173108.hrz.view.act.AnimalEncyclopediaAct"
             android:resizeableActivity="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.d1540173108.hrz.view.act.AnimalDescAct"
             android:resizeableActivity="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.d1540173108.hrz.view.act.HtmlAct"
             android:resizeableActivity="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.d1540173108.hrz.view.act.CLAnimalAct"
             android:resizeableActivity="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.d1540173108.hrz.view.act.CeShiAct"
             android:resizeableActivity="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.d1540173108.hrz.view.act.PlayMusicAct"
             android:resizeableActivity="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.d1540173108.hrz.view.act.VideoAct"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:resizeableActivity="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.d1540173108.hrz.view.act.HiARActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
@@ -99,26 +109,28 @@
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:process=":HiARActivity"
-            android:theme="@style/UnityThemeSelector"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/UnityThemeSelector">
             <meta-data
                 android:name="unityplayer.UnityActivity"
                 android:value="true" />
         </activity>
         <!--android:process=":HiARActivity"-->
 
-        <service android:name="com.d1540173108.hrz.service.MediaService"
-            android:exported="true"/>
+        <service
+            android:name="com.d1540173108.hrz.service.MediaService"
+            android:exported="true" />
 
-        <service android:name="com.d1540173108.hrz.service.InitializeService"
-            android:exported="false"/>
+        <service
+            android:name="com.d1540173108.hrz.service.InitializeService"
+            android:exported="false" />
 
-        <service android:name="com.d1540173108.hrz.service.PhoneListenService"/>
+        <service android:name="com.d1540173108.hrz.service.PhoneListenService" />
 
-        <service android:name="com.d1540173108.hrz.service.StartService"/>
+        <service android:name="com.d1540173108.hrz.service.StartService" />
 
         <!--<activity android:name="com.yc.cldwsj.view.act.WeChatCaptureActivity"-->
-            <!--android:screenOrientation="portrait" />-->
+        <!--android:screenOrientation="portrait" />-->
 
         <!-- 微信  有盟 -->
         <activity
@@ -133,39 +145,34 @@
             android:configChanges="orientation|keyboardHidden|navigation|screenSize"
             android:exported="false"
             android:screenOrientation="behind"
-            android:windowSoftInputMode="adjustResize|stateHidden" >
-        </activity>
+            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
         <activity
             android:name="com.alipay.sdk.app.H5AuthActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
             android:screenOrientation="behind"
-            android:windowSoftInputMode="adjustResize|stateHidden" >
-        </activity>
+            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
 
         <activity
             android:name="com.d1540173108.hrz.wxapi.WXPayEntryActivity"
-            android:theme="@style/myTransparent"
             android:exported="true"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop"
+            android:theme="@style/myTransparent" />
         <!--微博-->
         <activity
             android:name="com.umeng.socialize.media.WBShareCallBackActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:exported="false"
-            >
-        </activity>
-        <activity android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
+        <activity
+            android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
             android:configChanges="keyboardHidden|orientation"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"
-            >
-        </activity>
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:name="com.sina.weibo.sdk.share.WbShareTransActivity"
             android:launchMode="singleTask"
-            android:name="com.sina.weibo.sdk.share.WbShareTransActivity">
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -175,18 +182,20 @@
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
-            android:noHistory="true" >
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="tencent1106499610" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.tencent.connect.common.AssistActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:configChanges="orientation|keyboardHidden|screenSize"/>
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -195,16 +204,78 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
+                android:resource="@xml/file_paths" />
         </provider>
+
+        <!--个推-->
+        <meta-data
+            android:name="PUSH_APPID"
+            android:value="9CJToBgxhj8z0arKralvG6" />
+        <meta-data
+            android:name="PUSH_APPKEY"
+            android:value="87Rt11MzUu9cw9Ahws0pR" />
+        <meta-data
+            android:name="PUSH_APPSECRET"
+            android:value="pDSaYYcqoL9qvrWgUHVhu6" />
+
+        <service
+            android:name="com.igexin.sdk.PushService"
+            android:exported="true"
+            android:label="NotificationCenter"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:process=":pushservice">
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.service.message" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="com.igexin.sdk.PushReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.igexin.sdk.PushActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:process=":pushservice"
+            android:taskAffinity="com.igexin.sdk.PushActivityTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            android:name="com.igexin.sdk.GActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:process=":pushservice"
+            android:taskAffinity="com.igexin.sdk.PushActivityTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 用户自定义服务继承自GTIntentService,作为SDK与APP桥梁服务,用来接收各种消息和命令回复-->
+        <service
+            android:name="com.d1540173108.hrz.service.GtIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <!-- 用户自定义服务名 -->
+        <service
+            android:name="com.d1540173108.hrz.service.GtPushService"
+            android:exported="true"
+            android:label="PushService"
+            android:process=":pushservice"></service>
+
 
         <!-- 如果您项目中的所有页面都只需要以高或宽中的一个作为基准进行适配的话, 那就只需要填写高或宽中的一个设计图尺寸即可 -->
         <meta-data
             android:name="design_width_in_dp"
-            android:value="360"/>
+            android:value="360" />
         <meta-data
             android:name="design_height_in_dp"
-            android:value="640"/>
+            android:value="640" />
     </application>
 
 </manifest>

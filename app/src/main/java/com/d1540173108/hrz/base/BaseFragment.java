@@ -187,6 +187,7 @@ public abstract class BaseFragment<P extends BasePresenter, VB extends ViewDataB
 //                ToastUtils.setGravity(Gravity.CENTER, 0, 0);
 //                ToastUtils.showLong(str);
                 ToastUtils.showShort(str);
+                LogUtils.e(str);
             }
         });
     }

@@ -190,12 +190,21 @@
 
                         <com.d1540173108.hrz.weight.RoundImageView
                             android:id="@+id/iv_img"
+                            android:visibility="gone"
                             android:layout_marginBottom="@dimen/px100"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/px320"
                             android:layout_marginTop="@dimen/px40"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             android:src="@mipmap/y48" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_knowledge"
+                            android:visibility="visible"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            android:overScrollMode="never" />
 
                     </LinearLayout>
 

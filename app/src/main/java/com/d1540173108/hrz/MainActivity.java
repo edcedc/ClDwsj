@@ -20,6 +20,8 @@ import com.d1540173108.hrz.event.CameraInEvent;
 import com.d1540173108.hrz.event.MediaServiceInEvent;
 import com.d1540173108.hrz.event.MediaSuccessInEvent;
 import com.d1540173108.hrz.event.PhoneListenInEvent;
+import com.d1540173108.hrz.service.GtIntentService;
+import com.d1540173108.hrz.service.GtPushService;
 import com.d1540173108.hrz.service.MediaService;
 import com.d1540173108.hrz.service.MusicBroadcastReceiver;
 import com.d1540173108.hrz.service.PhoneListenService;
@@ -28,6 +30,7 @@ import com.d1540173108.hrz.utils.RandomUntil;
 import com.d1540173108.hrz.utils.cache.ShareIsLoginCache;
 import com.d1540173108.hrz.utils.cache.ShareSessionIdCache;
 import com.d1540173108.hrz.view.MainFrg;
+import com.igexin.sdk.PushManager;
 import com.luck.picture.lib.tools.Constant;
 
 import org.greenrobot.eventbus.EventBus;
@@ -71,6 +74,20 @@ public class MainActivity extends BaseActivity {
         startService(new Intent(MainActivity.this,StartService.class));
 //        stopService(new Intent(MainActivity.this,StartService.class));
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        initGT();
+    }
+
+    private void initGT() {
+        // 为第三方自定义推送服务
+        PushManager.getInstance().initialize(act, GtPushService.class);
+//         为第三方自定义的推送服务事件接收类
+        PushManager.getInstance().registerPushIntentService(act, GtIntentService.class);
+        PushManager.getInstance().turnOnPush(act);
     }
 
     @Override

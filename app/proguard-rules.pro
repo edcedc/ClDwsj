@@ -457,3 +457,7 @@ public static final int *;
 -keep class com.youth.banner.** {
     *;
  }
+ #个推
+ -dontwarn com.igexin.**
+ -keep class com.igexin.** { *; }
+ -keep class org.json.** { *; }

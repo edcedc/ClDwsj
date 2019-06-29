@@ -35,6 +35,41 @@ public class DataBean implements Serializable {
     private String time;
     private double probability;
     private Bitmap bitmpPath;
+    private String spreadImg;
+    private String knowledgeImg;
+    private int useMethod;
+    private String knowledgeTitle;
+    private String knowledgeUrl;
+    private String bannerImg;
+    private String bannerTitle;
+
+    public String getBannerTitle() {
+        return bannerTitle;
+    }
+
+    public String getBannerImg() {
+        return bannerImg;
+    }
+
+    public String getKnowledgeUrl() {
+        return knowledgeUrl;
+    }
+
+    public String getKnowledgeTitle() {
+        return knowledgeTitle;
+    }
+
+    public int getUseMethod() {
+        return useMethod;
+    }
+
+    public String getKnowledgeImg() {
+        return knowledgeImg;
+    }
+
+    public String getSpreadImg() {
+        return spreadImg;
+    }
 
     public Bitmap getBitmpPath() {
         return bitmpPath;

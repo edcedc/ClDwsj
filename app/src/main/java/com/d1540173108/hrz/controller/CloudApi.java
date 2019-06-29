@@ -46,8 +46,8 @@ public class CloudApi {
 
 
     private static final String url =
-            "chimelong.powert.top";
-//            "192.168.101.31:9528";
+//            "chimelong.powert.top";
+            "120.78.147.95";
 
     public static final String SERVLET_URL = "http://" +
             url + "/zoor/";
@@ -278,11 +278,24 @@ public class CloudApi {
      *  故事
      */
     public static String storyGetStoryList = "story/getStoryListNew";
+    /**
+     *  1.1.1小知识列表
+     */
+    public static String knowledgeGetKnowledgeList = "knowledge/getKnowledgeList";
+    /**
+     *  1.2.4小知识获取封面图
+     */
+    public static String knowledgeGetKnowledgeBanner = "knowledge/getKnowledgeBanner";
 
     /**
      *  用户协议   关于我们
      */
     public static String agreementGetUserAgreement = "agreement/getUserAgreement";
+
+    /**
+     *  获取引导页
+     */
+    public static String spreadGetSpreadList = "spread/getSpreadList";
 
     /**
      * 取消收藏

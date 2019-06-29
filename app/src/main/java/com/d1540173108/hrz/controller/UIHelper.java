@@ -10,6 +10,8 @@ import com.blankj.utilcode.util.Utils;
 import com.d1540173108.hrz.base.User;
 import com.d1540173108.hrz.event.PhoneListenInEvent;
 import com.d1540173108.hrz.utils.cache.ShareSessionIdCache;
+import com.d1540173108.hrz.view.KnowledgeFrg;
+import com.d1540173108.hrz.view.KnowledgeImageFrg;
 import com.d1540173108.hrz.view.act.CeShiAct;
 import com.d1540173108.hrz.view.act.HiARActivity;
 import com.google.gson.Gson;
@@ -373,5 +375,29 @@ public final class UIHelper {
 
     public static void startCeShiAct() {
         ActivityUtils.startActivity(CeShiAct.class);
+    }
+
+    /**
+     *  1.1.1小知识列表
+     * @param root
+     */
+    public static void startKnowledgeFrg(BaseFragment root) {
+        KnowledgeFrg frg = new KnowledgeFrg();
+        Bundle bundle = new Bundle();
+        frg.setArguments(bundle);
+        ((MainFrg) root.getParentFragment()).startBrotherFragment(frg);
+    }
+
+    /**
+     *  1.1.1小知识列表 图片
+     * @param root
+     */
+    public static void startKnowledgeImageFrg(BaseFragment root, String title, String id) {
+        KnowledgeImageFrg frg = new KnowledgeImageFrg();
+        Bundle bundle = new Bundle();
+        bundle.putString("title", title);
+        bundle.putString("id", id);
+        frg.setArguments(bundle);
+        root.start(frg);
     }
 }

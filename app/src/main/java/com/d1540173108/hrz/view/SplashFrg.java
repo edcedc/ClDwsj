@@ -15,10 +15,14 @@ import android.view.View;
 import android.widget.ImageView;
 import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.StringUtils;
+import com.d1540173108.hrz.base.BaseListContract;
+import com.d1540173108.hrz.base.BaseListPresenter;
 import com.d1540173108.hrz.base.User;
+import com.d1540173108.hrz.bean.DataBean;
 import com.d1540173108.hrz.callback.Code;
 import com.d1540173108.hrz.controller.CloudApi;
 import com.d1540173108.hrz.event.LoginInEvent;
+import com.d1540173108.hrz.utils.GlideLoadingUtils;
 import com.d1540173108.hrz.utils.cache.ShareIsLoginCache;
 import com.d1540173108.hrz.utils.cache.SharedAccount;
 import com.umeng.analytics.MobclickAgent;
@@ -53,7 +57,7 @@ import org.json.JSONObject;
  * 版本：v1.0
  */
 
-public class SplashFrg extends BaseFragment<BasePresenter, FSplashBinding> implements BGABanner.Delegate, BGABanner.Adapter<ImageView, Integer> {
+public class SplashFrg extends BaseFragment<BaseListPresenter, FSplashBinding> implements BaseListContract.View, BGABanner.Delegate, BGABanner.Adapter<ImageView, DataBean> {
 
     public static SplashFrg newInstance() {
         Bundle args = new Bundle();
@@ -62,7 +66,7 @@ public class SplashFrg extends BaseFragment<BasePresenter, FSplashBinding> imple
         return fragment;
     }
 
-    private List<Integer> listImage = new ArrayList<>();
+    private List<DataBean> listImage = new ArrayList<>();
     private List<String> tips = new ArrayList<String>();
 
     private final int mHandle_splash = 0;
@@ -72,7 +76,7 @@ public class SplashFrg extends BaseFragment<BasePresenter, FSplashBinding> imple
 
     @Override
     public void initPresenter() {
-
+        mPresenter.init(this);
     }
 
     @Override
@@ -91,13 +95,7 @@ public class SplashFrg extends BaseFragment<BasePresenter, FSplashBinding> imple
 //        setSofia(true);
         setSwipeBackEnable(false);
         if (!ShareIsLoginCache.getInstance(act).getIsLogin()){
-            listImage.add(R.mipmap.y39);
-            listImage.add(R.mipmap.page_2);
-            listImage.add(R.mipmap.page_3);
-            listImage.add(R.mipmap.y46);
-            mB.banner.setData(listImage, new ArrayList<String>());
-            mB.banner.setAdapter(this);
-            mB.banner.setDelegate(this);
+            mPresenter.onRequest(CloudApi.spreadGetSpreadList, pagerNumber = 1);
         }else {
             handler.sendEmptyMessageDelayed(mHandle_permission, 1000);
         }
@@ -122,8 +120,9 @@ public class SplashFrg extends BaseFragment<BasePresenter, FSplashBinding> imple
     }
 
     @Override
-    public void fillBannerItem(BGABanner banner, ImageView itemView, Integer model, int position) {
-        itemView.setBackgroundResource(model);
+    public void fillBannerItem(BGABanner banner, ImageView itemView, DataBean model, int position) {
+        DataBean bean = (DataBean) model;
+        GlideLoadingUtils.load(act, CloudApi.HEAD_SERVLET_URL + "/uploadify/showImage?attachId=" + bean.getSpreadImg(), itemView);
     }
 
     @Override
@@ -287,5 +286,18 @@ public class SplashFrg extends BaseFragment<BasePresenter, FSplashBinding> imple
     private void startNext() {
         UIHelper.startMainAct();
         ActivityUtils.finishAllActivities();
+    }
+
+    @Override
+    public void setRefreshLayoutMode(int totalRow) {
+
+    }
+
+    @Override
+    public void setData(Object data) {
+        listImage.addAll((List<DataBean>) data);
+        mB.banner.setData(listImage, new ArrayList<String>());
+        mB.banner.setAdapter(this);
+        mB.banner.setDelegate(this);
     }
 }

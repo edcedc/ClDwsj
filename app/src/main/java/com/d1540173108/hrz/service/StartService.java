@@ -67,13 +67,13 @@ public class StartService extends Service {
                 AudioManager.AUDIOFOCUS_GAIN);
 
         boolean vIsActive = mAm.isMusicActive();
-        LogUtils.e(vIsActive);
+//        LogUtils.e(vIsActive);
 
-        if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-            LogUtils.e("requestAudioFocus successfully.");
-        } else {
-            LogUtils.e("requestAudioFocus failed.");
-        }
+//        if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+//            LogUtils.e("requestAudioFocus successfully.");
+//        } else {
+//            LogUtils.e("requestAudioFocus failed.");
+//        }
     }
 
     @Nullable

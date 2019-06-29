@@ -1,18 +1,10 @@
 package com.d1540173108.hrz.view;
 
-import android.content.ComponentName;
-import android.content.Intent;
-import android.content.ServiceConnection;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.os.Message;
-import android.os.Messenger;
-import android.os.RemoteException;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.NetworkUtils;
 import com.d1540173108.hrz.base.User;
 import com.d1540173108.hrz.bean.DownloadBean;
@@ -36,6 +28,7 @@ import com.d1540173108.hrz.presenter.HomePresenter;
 import com.d1540173108.hrz.utils.GlideLoadingUtils;
 import com.d1540173108.hrz.view.bottomFrg.MusicListBottomFrg;
 import com.d1540173108.hrz.view.impl.HomeContarct;
+import com.d1540173108.hrz.adapter.KnowledgeAdapter;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -44,8 +37,6 @@ import org.litepal.LitePal;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.content.Context.BIND_AUTO_CREATE;
 
 /**
  * Created by edison on 2019/1/10.
@@ -67,7 +58,8 @@ public class HomeFrg extends BaseFragment<HomePresenter, FHomeBinding> implement
 
     private int ar_red = 0;//0AR 1红包
 
-
+    private List<DataBean> listKnowledge = new ArrayList<>();
+    private KnowledgeAdapter knowledgeAdapter;
 
     @Override
     public void initPresenter() {
@@ -104,24 +96,31 @@ public class HomeFrg extends BaseFragment<HomePresenter, FHomeBinding> implement
         if (adapter == null){
             adapter = new StoryAdapter(act, listBean);
         }
-        mB.recyclerView.setLayoutManager(new LinearLayoutManager(mB
-                .recyclerView.getContext(), RecyclerView.HORIZONTAL, false));
+        mB.recyclerView.setLayoutManager(new LinearLayoutManager(mB .recyclerView.getContext(), RecyclerView.HORIZONTAL, false));
         mB.recyclerView.setHasFixedSize(true);
         mB.recyclerView.setNestedScrollingEnabled(false);
         mB.recyclerView.setAdapter(adapter);
 
+        if (knowledgeAdapter == null){
+            knowledgeAdapter = new KnowledgeAdapter(act, this, listKnowledge, false);
+        }
+        mB.rvKnowledge.setLayoutManager(new LinearLayoutManager(mB .rvKnowledge.getContext(), RecyclerView.VERTICAL, false));
+        mB.rvKnowledge.setHasFixedSize(true);
+        mB.rvKnowledge.setNestedScrollingEnabled(false);
+        mB.rvKnowledge.setAdapter(knowledgeAdapter);
+
         showLoadDataing();
-//        mB.refreshLayout.startRefresh();
-        mPresenter.onSleep(HomeFrg.this, mB.gridView);
-        mPresenter.onRequest();
-        mB.refreshLayout.setPureScrollModeOn();
+        mB.refreshLayout.startRefresh();
+//        mPresenter.onSleep(HomeFrg.this, mB.gridView);
+//        mPresenter.onRequest();
         mB.refreshLayout.setEnableLoadmore(false);
         setRefreshLayout(mB.refreshLayout, new RefreshListenerAdapter() {
             @Override
             public void onRefresh(TwinklingRefreshLayout refreshLayout) {
-
                 mPresenter.onSleep(HomeFrg.this, mB.gridView);
                 mPresenter.onRequest();
+                mPresenter.onKnowledge();
+                mB.refreshLayout.setPureScrollModeOn();
             }
         });
 
@@ -197,6 +196,21 @@ public class HomeFrg extends BaseFragment<HomePresenter, FHomeBinding> implement
         }
         listBean.addAll(list);
         adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void setKnowledge(List<DataBean> list) {
+//        DataBean bean = list.get(0);
+//        GlideLoadingUtils.load(act, CloudApi.HEAD_SERVLET_URL + "/uploadify/showImage?attachId=" + bean.getKnowledgeImg(), mB.ivImg);
+
+        if (pagerNumber == 1) {
+            listKnowledge.clear();
+            mB.refreshLayout.finishRefreshing();
+        } else {
+            mB.refreshLayout.finishLoadmore();
+        }
+        listKnowledge.addAll(list);
+        knowledgeAdapter.notifyDataSetChanged();
     }
 
     @Override

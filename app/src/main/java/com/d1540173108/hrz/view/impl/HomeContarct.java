@@ -17,6 +17,8 @@ public interface HomeContarct {
     interface View extends IBaseView {
 
         void setData(List<DataBean> listBean);
+
+        void setKnowledge(List<DataBean> list);
     }
 
     abstract class Presenter extends BasePresenter<View> {
@@ -24,6 +26,8 @@ public interface HomeContarct {
         public abstract void onSleep(BaseFragment root, WithScrollGridView gridView);
 
         public abstract void onRequest();
+
+        public abstract void onKnowledge();
     }
 
 }

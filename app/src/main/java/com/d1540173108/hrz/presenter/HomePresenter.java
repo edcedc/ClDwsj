@@ -53,7 +53,8 @@ public class HomePresenter extends HomeContarct.Presenter{
                 String name = bean.getName();
                 switch (i){
                     case 0:
-                        UIHelper.startHtmlAct(act.getString(R.string.little_knowledge), "http://chimelong.peanuts.cc/index1.html");
+                        UIHelper.startKnowledgeFrg(root);
+//                        UIHelper.startHtmlAct(act.getString(R.string.little_knowledge), "http://chimelong.peanuts.cc/index1.html");
                         break;
                     case 1:
                         UIHelper.startStoryListFrg(root, name, i);

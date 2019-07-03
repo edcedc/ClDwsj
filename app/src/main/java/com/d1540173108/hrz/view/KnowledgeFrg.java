@@ -27,6 +27,13 @@ import java.util.List;
  */
 public class KnowledgeFrg extends BaseFragment<BaseListPresenter, BRecyclerBinding> implements BaseListContract.View {
 
+    public static KnowledgeFrg newInstance() {
+        Bundle args = new Bundle();
+        KnowledgeFrg fragment = new KnowledgeFrg();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     public void initPresenter() {
         mPresenter.init(this);
@@ -58,11 +65,16 @@ public class KnowledgeFrg extends BaseFragment<BaseListPresenter, BRecyclerBindi
 
         showLoadDataing();
         mB.refreshLayout.startRefresh();
-        mB.refreshLayout.setEnableLoadmore(false);
         setRefreshLayout(mB.refreshLayout, new RefreshListenerAdapter() {
             @Override
             public void onRefresh(TwinklingRefreshLayout refreshLayout) {
                 mPresenter.onRequest(CloudApi.knowledgeGetKnowledgeList, pagerNumber = 1);
+            }
+
+            @Override
+            public void onLoadMore(TwinklingRefreshLayout refreshLayout) {
+                super.onLoadMore(refreshLayout);
+                mPresenter.onRequest(CloudApi.knowledgeGetKnowledgeList, pagerNumber += 1);
             }
         });
     }

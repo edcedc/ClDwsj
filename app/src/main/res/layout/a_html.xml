@@ -23,6 +23,8 @@
 
             <com.d1540173108.hrz.weight.X5WebView
                 android:id="@+id/webView"
+                android:layout_marginLeft="@dimen/px20"
+                android:layout_marginRight="@dimen/px20"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"  />
 

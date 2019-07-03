@@ -17,6 +17,7 @@ import com.d1540173108.hrz.controller.CloudApi;
 import com.d1540173108.hrz.controller.UIHelper;
 import com.d1540173108.hrz.utils.GlideLoadingUtils;
 import com.d1540173108.hrz.weight.RoundImageView;
+import com.flyco.roundview.RoundTextView;
 
 import java.util.List;
 
@@ -42,10 +43,10 @@ public class KnowledgeAdapter extends BaseRecyclerviewAdapter<DataBean> {
         if (!isaKnowledge){
             GlideLoadingUtils.load(act, CloudApi.HEAD_SERVLET_URL + "/uploadify/showImage?attachId=" + bean.getKnowledgeImg(), viewHolder.iv_img);
         }else {
-            String bannerTitle = bean.getBannerTitle();
+            String bannerTitle = bean.getKnowledgeTitle();
             if (!StringUtils.isEmpty(bannerTitle)){
                 viewHolder.gp_view.setVisibility(View.VISIBLE);
-                viewHolder.tv_content.setText(bean.getBannerTitle());
+                viewHolder.tv_content.setText(bannerTitle);
             }else {
                 viewHolder.gp_view.setVisibility(View.GONE);
             }
@@ -60,7 +61,7 @@ public class KnowledgeAdapter extends BaseRecyclerviewAdapter<DataBean> {
                     UIHelper.startKnowledgeFrg(root);
                 }else {
                     if (bean.getUseMethod() == 1){
-                        UIHelper.startKnowledgeImageFrg(root, bean.getBannerTitle(), bean.getKnowledgeImg());
+                        UIHelper.startKnowledgeImageFrg(root, bean.getKnowledgeTitle(), bean.getKnowledgeImg());
                     }else {
                         UIHelper.startHtmlAct(bean.getKnowledgeTitle(), bean.getKnowledgeUrl());
                     }

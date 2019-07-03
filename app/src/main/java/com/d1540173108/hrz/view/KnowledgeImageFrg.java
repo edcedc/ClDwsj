@@ -1,14 +1,20 @@
 package com.d1540173108.hrz.view;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.blankj.utilcode.util.LogUtils;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.d1540173108.hrz.R;
 import com.d1540173108.hrz.base.BaseFragment;
 import com.d1540173108.hrz.base.BasePresenter;
 import com.d1540173108.hrz.controller.CloudApi;
 import com.d1540173108.hrz.databinding.FKnowledgeImageBinding;
-import com.d1540173108.hrz.utils.GlideLoadingUtils;
 
 /**
  * Created by wb  yyc
@@ -37,9 +43,26 @@ public class KnowledgeImageFrg extends BaseFragment<BasePresenter, FKnowledgeIma
         return R.layout.f_knowledge_image;
     }
 
+    private final int MAX_WIDTH = 1000;//图片的最大宽度
+    private final int MAX_HEIGHT = 500;//图片的最大高度
+
     @Override
     protected void initView(View view) {
         setTitle(title);
-        GlideLoadingUtils.load(act, CloudApi.HEAD_SERVLET_URL + "/uploadify/showImage?attachId=" + id, mB.ivImg);
+//        GlideLoadingUtils.load(act, CloudApi.HEAD_SERVLET_URL + "/uploadify/showImage?attachId=" + id, mB.ivImg);
+        final String s = CloudApi.HEAD_SERVLET_URL + "/uploadify/showImage?attachId=" + id;
+        LogUtils.e(s);
+
+        Glide.with(this)
+                .asBitmap()
+                .load(s)
+                .into(new SimpleTarget<Bitmap>() {
+                    @Override
+                    public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
+                        mB.ivImg.setImageBitmap(resource);
+                    }
+                });
+
+
     }
 }

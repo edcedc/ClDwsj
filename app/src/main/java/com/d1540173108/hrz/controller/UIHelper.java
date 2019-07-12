@@ -392,12 +392,16 @@ public final class UIHelper {
      *  1.1.1小知识列表 图片
      * @param root
      */
-    public static void startKnowledgeImageFrg(BaseFragment root, String title, String id) {
+    public static void startKnowledgeImageFrg(BaseFragment root, String title, String id, int type) {
         KnowledgeImageFrg frg = new KnowledgeImageFrg();
         Bundle bundle = new Bundle();
         bundle.putString("title", title);
         bundle.putString("id", id);
         frg.setArguments(bundle);
-        root.start(frg);
+        if (type == 0){
+            ((MainFrg) root.getParentFragment()).startBrotherFragment(frg);
+        }else {
+            root.start(frg);
+        }
     }
 }

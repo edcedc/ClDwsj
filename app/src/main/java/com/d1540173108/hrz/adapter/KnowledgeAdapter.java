@@ -61,7 +61,7 @@ public class KnowledgeAdapter extends BaseRecyclerviewAdapter<DataBean> {
                     UIHelper.startKnowledgeFrg(root);
                 }else {
                     if (bean.getUseMethod() == 1){
-                        UIHelper.startKnowledgeImageFrg(root, bean.getKnowledgeTitle(), bean.getKnowledgeImg());
+                        UIHelper.startKnowledgeImageFrg(root, bean.getKnowledgeTitle(), bean.getKnowledgeImg(), 1);
                     }else {
                         UIHelper.startHtmlAct(bean.getKnowledgeTitle(), bean.getKnowledgeUrl());
                     }

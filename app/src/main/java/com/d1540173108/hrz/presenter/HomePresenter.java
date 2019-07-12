@@ -1,6 +1,5 @@
 package com.d1540173108.hrz.presenter;
 
-import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -34,7 +33,7 @@ public class HomePresenter extends HomeContarct.Presenter{
     @Override
     public void onSleep(final BaseFragment root, WithScrollGridView gridView) {
         String[] laberStr = {"小知识", act.getString(R.string.story), act.getString(R.string.picture_book), act.getString(R.string.animation)};
-        int[] laberImg = {R.mipmap.y49, R.mipmap.icon_gus, R.mipmap.icon_huiben, R.mipmap.icon_donghua};
+        int[] laberImg = {R.mipmap.y46, R.mipmap.icon_gus, R.mipmap.icon_huiben, R.mipmap.icon_donghua};
 
         final List<DataBean> listStr = new ArrayList<>();
         for (int i = 0; i < laberStr.length; i++) {
@@ -145,6 +144,40 @@ public class HomePresenter extends HomeContarct.Presenter{
                     @Override
                     public void onComplete() {
                         mView.hideLoading();
+                    }
+                });
+    }
+
+    @Override
+    public void onGtKnowledge(String id) {
+        CloudApi.knowledgeGetKnowledgeDetail(id)
+                .doOnSubscribe(new Consumer<Disposable>() {
+                    @Override
+                    public void accept(Disposable disposable) throws Exception {
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Response<BaseResponseBean<DataBean>>>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        mView.addDisposable(d);
+                    }
+
+                    @Override
+                    public void onNext(Response<BaseResponseBean<DataBean>> baseResponseBeanResponse) {
+                        if (baseResponseBeanResponse.body().code == Code.CODE_SUCCESS){
+                            mView.setGtKnowledge(baseResponseBeanResponse.body().data);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        mView.onError(e);
+                    }
+
+                    @Override
+                    public void onComplete() {
+
                     }
                 });
     }

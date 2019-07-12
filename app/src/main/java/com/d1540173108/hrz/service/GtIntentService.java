@@ -3,6 +3,7 @@ package com.d1540173108.hrz.service;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 
 import com.blankj.utilcode.util.LogUtils;
@@ -55,13 +56,16 @@ public class GtIntentService extends GTIntentService {
             JSONObject object = new JSONObject(data);
             NotificationUtils notificationUtils = new NotificationUtils(this);
             Intent intent = new Intent(this, MainActivity.class);
-            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+            Bundle bundle = new Bundle();
+            bundle.putString("id", object.optString("id"));
+            bundle.putInt("type", object.optInt("type"));
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.putExtras(bundle);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
             notificationUtils.sendNotification(object.optString("title"), object.optString("text"), pendingIntent);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
     }
 
     @Override

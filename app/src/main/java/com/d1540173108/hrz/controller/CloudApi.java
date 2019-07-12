@@ -315,6 +315,22 @@ public class CloudApi {
     }
 
     /**
+     * 获取小知识详情
+     */
+    public static Observable<Response<BaseResponseBean<DataBean>>> knowledgeGetKnowledgeDetail(String id) {
+        return OkGo.<BaseResponseBean<DataBean>>post(SERVLET_URL + "knowledge/getKnowledgeDetail")
+                .params("knowledgeId", id)
+                .converter(new NewsCallback<BaseResponseBean<DataBean>>() {
+                    @Override
+                    public void onSuccess(Response<BaseResponseBean<DataBean>> response) {
+
+                    }
+                })
+                .adapt(new ObservableResponse<BaseResponseBean<DataBean>>())
+                .subscribeOn(Schedulers.io());
+    }
+
+    /**
      * 新增反馈
      */
     public static Observable<Response<BaseResponseBean<DataBean>>> feedbackSaveFeedbackMsg(String title, String content) {

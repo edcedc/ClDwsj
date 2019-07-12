@@ -5,6 +5,8 @@ import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.d1540173108.hrz.R;
 import com.d1540173108.hrz.base.BaseListViewAdapter;
@@ -36,6 +38,15 @@ public class LabelAdapter extends BaseListViewAdapter<DataBean> {
 //        viewHolder.tvName.setCompoundDrawablesWithIntrinsicBounds(null,
 //               act.getResources().getDrawable(bean.getImg(), null), null, null);
         viewHolder.ivImg.setBackgroundResource(bean.getImg());
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) viewHolder.tvName.getLayoutParams();
+        if (position == 0){
+            params.setMargins(10, 16, 0, 0);
+        }else if (position == 3){
+            params.setMargins(0, 16, 0, 0);
+        }else {
+            params.setMargins(0, 10, 0, 0);
+        }
+        viewHolder.tvName.setLayoutParams(params);
         return convertView;
     }
 

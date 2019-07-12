@@ -5,12 +5,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.NetworkUtils;
 import com.d1540173108.hrz.base.User;
 import com.d1540173108.hrz.bean.DownloadBean;
 import com.d1540173108.hrz.bean.SaveMusicListBean;
 import com.d1540173108.hrz.controller.CloudApi;
 import com.d1540173108.hrz.event.AppointMusicInEvent;
+import com.d1540173108.hrz.event.GtInEvent;
 import com.d1540173108.hrz.event.LoginSuccessInEvent;
 import com.d1540173108.hrz.event.PhoneListenInEvent;
 import com.d1540173108.hrz.event.PlayMusicEndInEvent;
@@ -127,8 +129,17 @@ public class HomeFrg extends BaseFragment<HomePresenter, FHomeBinding> implement
         EventBus.getDefault().register(this);
         //后台说固定写死
         GlideLoadingUtils.load(act, CloudApi.IMAGE_SERVLET_URL +  "/zoor/story/showPicBannerAR?id=1" + "&" + (float) (Math.random() * 100), mB.ivArImg);
+    }
 
-
+    @Subscribe
+    public void onGtInEvent(GtInEvent event){
+       if (event.type == 1){
+           onMainThreadInEvent(new PhoneListenInEvent(true));
+           MainActivity.isWifi = true;
+           UIHelper.startPlayMusicAct(listBean, Integer.valueOf(event.id));
+       }else if (event.type == 2){
+           mPresenter.onGtKnowledge(event.id);
+       }
     }
 
     @Subscribe
@@ -211,6 +222,15 @@ public class HomeFrg extends BaseFragment<HomePresenter, FHomeBinding> implement
         }
         listKnowledge.addAll(list);
         knowledgeAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void setGtKnowledge(DataBean bean) {
+        if (bean.getUseMethod() == 1){
+            UIHelper.startKnowledgeImageFrg(this, bean.getKnowledgeTitle(), bean.getKnowledgeImg(), 0);
+        }else {
+            UIHelper.startHtmlAct(bean.getKnowledgeTitle(), bean.getKnowledgeUrl());
+        }
     }
 
     @Override

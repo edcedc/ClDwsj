@@ -19,6 +19,8 @@ public interface HomeContarct {
         void setData(List<DataBean> listBean);
 
         void setKnowledge(List<DataBean> list);
+
+        void setGtKnowledge(DataBean data);
     }
 
     abstract class Presenter extends BasePresenter<View> {
@@ -28,6 +30,8 @@ public interface HomeContarct {
         public abstract void onRequest();
 
         public abstract void onKnowledge();
+
+        public abstract void onGtKnowledge(String id);
     }
 
 }

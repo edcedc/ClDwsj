@@ -17,6 +17,7 @@ import com.d1540173108.hrz.base.BaseActivity;
 import com.d1540173108.hrz.bean.Common;
 import com.d1540173108.hrz.bean.Music;
 import com.d1540173108.hrz.event.CameraInEvent;
+import com.d1540173108.hrz.event.GtInEvent;
 import com.d1540173108.hrz.event.MediaServiceInEvent;
 import com.d1540173108.hrz.event.MediaSuccessInEvent;
 import com.d1540173108.hrz.event.PhoneListenInEvent;
@@ -41,6 +42,16 @@ import java.util.List;
 
 public class MainActivity extends BaseActivity {
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        if (intent != null){
+            String id = getIntent().getStringExtra("id");
+            int type = getIntent().getIntExtra("type", -1);// 1：故事内容页  2：小知识内容页
+            EventBus.getDefault().post(new GtInEvent(type, id));
+        }
+    }
 
     @Override
     public void initPresenter() {

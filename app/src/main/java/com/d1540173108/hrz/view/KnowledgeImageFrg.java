@@ -43,9 +43,6 @@ public class KnowledgeImageFrg extends BaseFragment<BasePresenter, FKnowledgeIma
         return R.layout.f_knowledge_image;
     }
 
-    private final int MAX_WIDTH = 1000;//图片的最大宽度
-    private final int MAX_HEIGHT = 500;//图片的最大高度
-
     @Override
     protected void initView(View view) {
         setTitle(title);

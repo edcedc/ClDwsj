@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.StringUtils;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.d1540173108.hrz.base.BaseListContract;
 import com.d1540173108.hrz.base.BaseListPresenter;
 import com.d1540173108.hrz.base.User;
@@ -123,7 +125,9 @@ public class SplashFrg extends BaseFragment<BaseListPresenter, FSplashBinding> i
     @Override
     public void fillBannerItem(BGABanner banner, ImageView itemView, DataBean model, int position) {
         DataBean bean = (DataBean) model;
-        GlideLoadingUtils.load(act, CloudApi.HEAD_SERVLET_URL + "/uploadify/showImage?attachId=" + bean.getSpreadImg(), itemView);
+        RequestOptions options = new RequestOptions();
+        Glide.with(act).load(CloudApi.HEAD_SERVLET_URL + "/uploadify/showImage?attachId=" + bean.getSpreadImg()).apply(options).into(itemView);
+//        GlideLoadingUtils.load(act, CloudApi.HEAD_SERVLET_URL + "/uploadify/showImage?attachId=" + bean.getSpreadImg(), itemView);
         LogUtils.e(CloudApi.HEAD_SERVLET_URL + "/uploadify/showImage?attachId=" + bean.getSpreadImg());
     }
 

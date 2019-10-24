@@ -116,6 +116,7 @@ public class FileSaveUtils {
                                     @Override
                                     public void onComplete() {
                                         LogUtils.e("下载完成");
+                                        ToastUtils.showShort("下载完成");
 
                                         builder.setContentTitle("下载完成")
                                                 .setContentText("")

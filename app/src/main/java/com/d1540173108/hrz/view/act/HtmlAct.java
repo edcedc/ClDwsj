@@ -3,14 +3,12 @@ package com.d1540173108.hrz.view.act;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.d1540173108.hrz.controller.CloudApi;
-import com.d1540173108.hrz.weight.HtmlFormat;
-import com.tencent.smtt.sdk.WebChromeClient;
-import com.tencent.smtt.sdk.WebView;
-import com.tencent.smtt.sdk.WebViewClient;
 import com.d1540173108.hrz.R;
 import com.d1540173108.hrz.base.BaseActivity;
 import com.d1540173108.hrz.base.BasePresenter;

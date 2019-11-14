@@ -2,6 +2,9 @@ package com.d1540173108.hrz.view;
 
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.blankj.utilcode.util.ToastUtils;
 import com.d1540173108.hrz.R;
@@ -9,14 +12,8 @@ import com.d1540173108.hrz.base.BaseFragment;
 import com.d1540173108.hrz.base.BasePresenter;
 import com.d1540173108.hrz.databinding.FLyricBinding;
 import com.d1540173108.hrz.event.LrcViewInEvent;
-import com.d1540173108.lrcview.LrcView;
-import com.tencent.smtt.sdk.WebChromeClient;
-import com.tencent.smtt.sdk.WebView;
-import com.tencent.smtt.sdk.WebViewClient;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
-
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -141,6 +138,17 @@ public class PlayMusicLyricFrg extends BaseFragment<BasePresenter, FLyricBinding
                 mB.progressBar.setVisibility(View.GONE);
                 ToastUtils.showShort("网页加载失败");
             }
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                //这个是一定要加上那个的,配合scrollView和WebView的height=wrap_content属性使用
+                int w = View.MeasureSpec.makeMeasureSpec(0,
+                        View.MeasureSpec.UNSPECIFIED);
+                int h = View.MeasureSpec.makeMeasureSpec(0,
+                        View.MeasureSpec.UNSPECIFIED);
+                //重新测量
+                mB.webView.measure(w, h);
+            }
         });
         //进度条
         mB.webView.setWebChromeClient(new WebChromeClient() {
@@ -154,7 +162,10 @@ public class PlayMusicLyricFrg extends BaseFragment<BasePresenter, FLyricBinding
                 mB.progressBar.setProgress(newProgress);
             }
         });
+
     }
+
+
 
     @Subscribe
     public void onMainLrcViewInEvent(LrcViewInEvent event){

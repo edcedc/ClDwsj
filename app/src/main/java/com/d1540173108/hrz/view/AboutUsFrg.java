@@ -3,6 +3,9 @@ package com.d1540173108.hrz.view;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.blankj.utilcode.util.ToastUtils;
 import com.d1540173108.hrz.R;
@@ -10,11 +13,7 @@ import com.d1540173108.hrz.base.BaseFragment;
 import com.d1540173108.hrz.base.BaseListContract;
 import com.d1540173108.hrz.base.BaseListPresenter;
 import com.d1540173108.hrz.bean.DataBean;
-import com.d1540173108.hrz.controller.CloudApi;
 import com.d1540173108.hrz.databinding.FAboutBinding;
-import com.tencent.smtt.sdk.WebChromeClient;
-import com.tencent.smtt.sdk.WebView;
-import com.tencent.smtt.sdk.WebViewClient;
 
 import java.util.List;
 
@@ -76,8 +75,6 @@ public class AboutUsFrg extends BaseFragment<BaseListPresenter, FAboutBinding> i
         mB.webView.goBack();// 返回前一个页面
         return super.onBackPressedSupport();
     }
-
-
 
     @Override
     public void setRefreshLayoutMode(int totalRow) {

@@ -21,7 +21,6 @@ public class PlayMusicImgFrg extends BaseFragment<BasePresenter, FImgBinding> {
     private String image;
 
     public void setImage(String image) {
-        LogUtils.e(CloudApi.IMAGE_SERVLET_URL + image);
         GlideLoadingUtils.load(act, CloudApi.IMAGE_SERVLET_URL + image, mB.ivImg);
     }
 

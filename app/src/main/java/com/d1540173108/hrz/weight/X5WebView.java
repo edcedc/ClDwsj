@@ -5,10 +5,10 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.WindowManager;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
-import com.tencent.smtt.sdk.WebSettings;
-import com.tencent.smtt.sdk.WebView;
-import com.tencent.smtt.sdk.WebViewClient;
 
 /**
  * Created by yc on 2017/12/29.
@@ -37,7 +37,7 @@ public class X5WebView extends WebView {
         // this.setWebChromeClient(chromeClient);
         // WebStorage webStorage = WebStorage.getInstance();
         initWebViewSettings(arg0);
-        this.getView().setClickable(true);
+//        this.getView().setClickable(true);
     }
 
     private void initWebViewSettings(Context context) {
